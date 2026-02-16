@@ -198,3 +198,16 @@ cyclonedx validate --input-file generated-cboms/llm_cbom.json
 | **Merge** | — | — | Maximum coverage |
 
 See [CBOM_COMPARISON_REPORT.md](CBOM_COMPARISON_REPORT.md) for full analysis.
+
+
+## Lessons Learnt 
+
+1. There is no tool that gives you the "perfect CBOM"
+2. LLMs are a must tool for CI/CD CBOM analysis
+2. CodeQL and sonarqube are good tools with sound capabilities, but do not give you the complete picture and have limitations on top of the known languaje limitations
+3. This kind of benchmarks can help us understand the big picture of the CBOM paradigm and advance in the fastest path (to me LLM repository scanning)
+4. All this analysis are static and require further methods to include them in the pipelines for continuous integration. (i.e Rejecting pull request if cryptography is not compliant with policies.)
+
+## Next steps.
+1. Apply the methodology to other Java and Python codes to check the results and try to get stronger conclusions.
+2. Explore the LLM stand alone capability and its integration in SecDevOps.
