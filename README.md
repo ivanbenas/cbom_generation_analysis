@@ -3,11 +3,13 @@
 When we search for software solutions to generate CBOMs from source code, there are not many open source tools, and most of them are limited to just a few languages.
 Some of the most known are the [sonar-cryptography plugin](https://github.com/cbomkit/sonar-cryptography?tab=readme-ov-file) and [CodeQL](https://github.blog/security/vulnerability-research/addressing-post-quantum-cryptography-with-codeql/).
 
-This exercise benchmarks these two methods and a pure LLM approach for generating Cryptographic Bills of Materials (CBOMs) for the same codebase, comparing complexity, coverage, and CycloneDX 1.6 standard adherence.
+This exercise benchmarks these two methods and a pure LLM approach for generating Cryptographic Bills of Materials (CBOMs).
 
 **Benchmark target:** Apache Kafka (commit f20f299) · **Date:** 2026-02-15
 
-The Kafka project and the fixed commit were chosen together with CycloneDX 1.6 to compare with the SonarQube cryptography plugin generation. This report compares complexity, time investment, standard adherence, coverage, and language support. A merged CBOM consolidates findings from all three sources.
+The Kafka project and the fixed commit were chosen together with CycloneDX 1.6 to compare with the SonarQube cryptography plugin generation. 
+
+This report compares complexity, standard adherence, coverage and language support. A merged CBOM consolidates findings from all three sources.
 
 | Tool | Components | Crypto Assets | Libraries | Compliance Score | Best For |
 |------|-----------|-------------|-----------|-----------------|----------|
