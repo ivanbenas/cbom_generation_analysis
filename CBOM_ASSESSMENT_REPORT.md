@@ -9,49 +9,25 @@
 
 Three distinct approaches were used to generate CycloneDX 1.6 CBOMs for the same Kafka codebase. This report compares complexity, time investment, standard adherence, coverage, and language support. A merged CBOM consolidates findings from all three sources.
 
+| Tool | Components | Crypto Assets | Libraries | Compliance Score | Best For |
+|------|-----------|-------------|-----------|-----------------|----------|
+| **Pure LLM** | 16 | 5 | 10 | 78% | Semantic understanding, library detection |
+| **SonarQube** | 11 | 11 | 0 | 65% | Algorithm detection with dependencies |
+| **CodeQL** | 35 | 35 | 0 | 82% | Exhaustive static analysis, operational crypto |
+| **Merged** | 55 | 45 | 10 | 91% | Comprehensive coverage |
+
+
+![Component distribution by methodology](images/full_view.png)
+
 ---
 
-## 1. Method Overview
+## 1. Process Complexity
 
-| Method | Tool(s) | Output File | Primary Input |
-|--------|---------|-------------|---------------|
-| **1. Pure LLM** | `generate_cbom_v2.py` (regex + Gradle parsing) | `generated-cboms/llm_cbom.json` | Source code (Java, Scala) |
-| **2. SonarQube Cryptography** | Sonar Cryptography Plugin (IBM) | `generated-cboms/sonarqube_cbom.json` | Java AST via SonarQube |
-| **3. CodeQL + LLM** | CodeQL DB + custom crypto queries + `sarif_to_cbom.py` | `generated-cboms/codeql_cbom.json` | SARIF from CodeQL analysis |
-
----
-
-## 2. Complexity to Get the Result
-
-### 2.1 Pure LLM (generate_cbom_v2.py)
-
-| Aspect | Assessment |
-|--------|------------|
-| **Setup** | Low – single Python script, no external services |
-| **Dependencies** | Python 3, no special packages beyond stdlib |
-| **Steps** | 1. Clone repo, 2. Run `python generate_cbom_v2.py <path> <output> <name>` |
-| **Infrastructure** | None |
-| **Overall** | **Low complexity** – run and done |
-
-### 2.2 SonarQube Cryptography Plugin
-
-| Aspect | Assessment |
-|--------|------------|
-| **Software Setup** | High – Maven build, Docker, SonarQube, Quality Profile config |
-| **Dependencies** | Maven, Docker, Java 17+, Gradle |
-| **Steps** | 1. Build plugin, 2. Start SonarQube, 3. Configure Quality Profile, 4. Create project, 5. Activate Cryptography rules, 6. Run `gradlew sonar`|
-| **Infrastructure** | SonarQube server (Docker) must be running |
-| **Overall** | **Medium complexity** – multiple manual configuration steps + Java Heap Issues for big projects |
-
-### 2.3 CodeQL + LLM (SARIF → CBOM)
-
-| Aspect | Assessment |
-|--------|------------|
-| **Setup** | Medium–High – CodeQL CLI, database creation, custom queries, converter script |
-| **Dependencies** | CodeQL CLI, Java (for DB), Python for `sarif_to_cbom.py` |
-| **Steps** | 1. `codeql database create`, 2. Run crypto queries (LLM-generated or community), 3. Run `sarif_to_cbom.py` |
-| **Infrastructure** | CodeQL database (large, disk-intensive) |
-| **Overall** | **Medium–High complexity** – DB creation is slow; queries and converter are reusable |
+| Method | Setup | Dependencies | Steps | Infrastructure | Overall |
+|--------|-------|--------------|-------|----------------|---------|
+| **Pure LLM** (generate_cbom_v2.py) | Low (~5min) – single Python script, no external services | Python 3, no special packages beyond stdlib | 1. Clone repo, 2. Run `python generate_cbom_v2.py <path> <output> <name>` | None | Low complexity |
+| **SonarQube** Cryptography Plugin | High (~30min) – Maven build, Docker, SonarQube, Quality Profile config | Maven, Docker, Java 17+, Gradle | 1. Build plugin, 2. Start SonarQube, 3. Configure Quality Profile, 4. Create project, 5. Activate Cryptography rules, 6. Run `gradlew sonar` | SonarQube server (Docker) must be running | Medium – multiple manual configuration steps + Java Heap Issues for big projects |
+| **CodeQL + LLM** (SARIF → CBOM) | Medium–High (~40min) – CodeQL CLI, database creation, custom queries, converter script | CodeQL CLI, Java (for DB), Python for `sarif_to_cbom.py` | 1. `codeql database create`, 2. Run crypto queries (LLM-generated or community), 3. Run `sarif_to_cbom.py` | CodeQL database (large, disk-intensive) | Medium–High – DB creation is slow; queries and converter are reusable |
 
 
 ---
@@ -80,23 +56,11 @@ Three distinct approaches were used to generate CycloneDX 1.6 CBOMs for the same
 - **SonarQube**: Good cryptoProperties and granular dependencies; missing schema, nistQuantumSecurityLevel, application, libraries; incorrect key typing.
 - **CodeQL**: Good coverage and evidence; X.509 as algorithm instead of certificate; no nistQuantumSecurityLevel; no libraries.
 
-
 ---
 
-## 4. Time Investment
+## 4. Coverage 
 
-| Method | Typical Time | Notes |
-|--------|--------------|-------|
-| **Pure LLM** | &lt; 1 min | Single script run |
-| **SonarQube Cryptography** | 8–21 min | Build + scan + analysis |
-| **CodeQL + LLM** | 12–40 min | DB creation + queries + conversion |
-
-
----
-
-## 5. Coverage by Dimension
-
-### 5.1 Cryptographic Assets Discovered
+### 4.1 Cryptographic Assets Discovered
 
 | Asset | LLM | SonarQube | CodeQL |
 |-------|-----|-----------|--------|
@@ -119,19 +83,15 @@ Three distinct approaches were used to generate CycloneDX 1.6 CBOMs for the same
 | Key management ops (load, store, retrieve) | ✘ | ✘ | ✔ |
 | symmetric-key-generation | ✘ | ✘ | ✔ |
 
-### 5.2 Unique Strengths
+### 4.2 Unique Strengths
 
 - **LLM**: Libraries (BouncyCastle, JOSE4J, ApacheDS), key-management formats (JKS, PKCS12), X.509 as certificate, nistQuantumSecurityLevel. Also can be code languaje agnostic
 - **SonarQube**: DSA, RSA, EC from `KeyPairGenerator`/`KeyFactory` (variable algorithm resolution), granular algorithm→algorithm dependencies, key material detection.
 - **CodeQL**: Dynamic/unknown algorithms, SecureRandom, insecure `java.util.Random`, TLS/SSL config, key-management operations, ScramFormatter, Connect runtime, SkimpyOffsetMap.
 
-![Component distribution by methodology](images/coverage-component-distribution.png)
-
-*Figure 4: Distribution of discovered components (Crypto Assets, Libraries, Applications) per methodology*
-
 ---
 
-## 6. Language Coverage
+## 5. Language Coverage
 
 | Method | Java | Scala | Other |
 |--------|------|-------|-------|
@@ -142,7 +102,7 @@ Three distinct approaches were used to generate CycloneDX 1.6 CBOMs for the same
 
 ---
 
-## 7. Inconsistencies Across Sources
+## 6. Inconsistencies Across Sources
 
 | Issue | Description |
 |-------|-------------|
@@ -157,7 +117,7 @@ Three distinct approaches were used to generate CycloneDX 1.6 CBOMs for the same
 
 ---
 
-## 8. Merged CBOM
+## 7. Merged CBOM
 
 A merged CBOM (`generated-cboms/merged_cbom.json`) consolidates:
 
@@ -175,32 +135,9 @@ A merged CBOM (`generated-cboms/merged_cbom.json`) consolidates:
 
 ---
 
-## 9. Recommendations
+## 8. Merged CBOM Analysis
 
-| Goal | Recommendation |
-|-----|----------------|
-| **Fastest result** | Use LLM (`generate_cbom_v2.py`) |
-| **Best standard compliance** | Use LLM; optionally augment with SonarQube for algorithm dependencies |
-| **Maximum coverage** | Merge all three; CodeQL adds dynamic/unknown, TLS, insecure random |
-| **Scala support** | LLM only; extend SonarQube/CodeQL for Scala if needed |
-
----
-
-## 10. Files Reference
-
-| File | Description |
-|------|-------------|
-| `generated-cboms/llm_cbom.json` | Pure LLM/regex CBOM |
-| `generated-cboms/sonarqube_cbom.json` | SonarQube Cryptography plugin output |
-| `generated-cboms/codeql_cbom.json` | CodeQL SARIF → CBOM |
-| `generated-cboms/merged_cbom.json` | Merged CBOM from all three |
-| `merge_cboms.py` | Script to produce merged CBOM |
-
----
-
-## 11. Merged CBOM Analysis
-
-### 11.1 Structure
+### 8.1 Structure
 
 | Metric | Value |
 |--------|-------|
@@ -209,14 +146,14 @@ A merged CBOM (`generated-cboms/merged_cbom.json`) consolidates:
 | **Libraries** | 10 (ApacheDS, jose4j, bcpkix) |
 | **Cryptographic assets** | 44 |
 
-### 11.2 Asset Distribution by Source
+### 8.2 Asset Distribution by Source
 
 Evidence occurrences in the merged CBOM originate from:
 - **CodeQL**: ~100 occurrences (dynamic algorithms, TLS, random, key-management ops)
 - **SonarQube**: ~12 occurrences (DSA, RSA, EC, keys)
 - **LLM**: ~11 occurrences (SHA-256, HmacSHA512, JKS, PKCS12, X.509)
 
-### 11.3 Asset Categories in Merged CBOM
+### 8.3 Asset Categories in Merged CBOM
 
 | Category | Examples |
 |----------|----------|
@@ -228,7 +165,7 @@ Evidence occurrences in the merged CBOM originate from:
 | **Protocol/TLS** | TLS/SSL Configuration, SSLEngine, SSLContext |
 | **Other** | PRIVATE KEY (SonarQube – non-standard) |
 
-### 11.4 Inconsistencies in Merged Output
+### 8.4 Inconsistencies in Merged Output
 
 | Issue | Severity | Description |
 |-------|----------|-------------|
@@ -238,7 +175,7 @@ Evidence occurrences in the merged CBOM originate from:
 | **Evidence source field** | Info | Custom `source` (llm/sonarqube/codeql) in occurrences; not in CycloneDX spec but useful for traceability |
 | **nistQuantumSecurityLevel** | Low | Only present on assets from LLM; CodeQL/SonarQube assets lack it |
 
-### 11.5 Recommendations for Merged CBOM
+### 8.5 Recommendations for Merged CBOM
 
 1. **Post-merge validation**: Run CycloneDX schema validation on `merged_cbom.json`.
 2. **Deduplicate keystore-unknown**: Consider merging keystore-unknown by location pattern (e.g. same test file) if desired.
