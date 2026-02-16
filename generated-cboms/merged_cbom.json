@@ -1,0 +1,2522 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:681a59b6-42a6-4908-bc7b-101806b1211c",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-02-16T11:03:20Z",
+    "lifecycles": [
+      {
+        "phase": "post-build"
+      }
+    ],
+    "tools": {
+      "components": [
+        {
+          "type": "library",
+          "name": "CBOM Merger",
+          "version": "1.0.0",
+          "description": "Merges LLM, SonarQube, and CodeQL CBOMs"
+        }
+      ]
+    },
+    "component": {
+      "type": "application",
+      "bom-ref": "urn:uuid:a6e8be27-d9d1-4495-b3fc-b8f92f13fb61",
+      "name": "kafka",
+      "version": "trunk",
+      "description": "Cryptographic Bill of Materials for kafka"
+    },
+    "manufacturer": {
+      "name": "CBOM Merger"
+    },
+    "properties": [
+      {
+        "name": "cdx:cbom:mergedSources",
+        "value": "llm,sonarqube,codeql"
+      },
+      {
+        "name": "cdx:cbom:componentCount",
+        "value": "55"
+      },
+      {
+        "name": "cdx:git:commit",
+        "value": "f20f2994928fbae53541a2b821515427ee2679a2"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "application",
+      "bom-ref": "urn:uuid:a6e8be27-d9d1-4495-b3fc-b8f92f13fb61",
+      "name": "kafka",
+      "version": "trunk",
+      "description": "Cryptographic Bill of Materials for kafka"
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:uuid:c5f2bfd7-d365-4a60-953a-59628cd64d13",
+      "group": "org.apache.directory.server",
+      "name": "apacheds-core-api",
+      "version": "2.0.0-M24",
+      "description": "Cryptographic library dependency"
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:uuid:6f3812cf-c6ac-459a-8855-5c73d5fe3097",
+      "group": "org.apache.directory.server",
+      "name": "apacheds-interceptor-kerberos",
+      "version": "2.0.0-M24",
+      "description": "Cryptographic library dependency"
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:uuid:b6638a1f-f850-4712-8e3c-35ccc786cc15",
+      "group": "org.apache.directory.server",
+      "name": "apacheds-jdbm-partition",
+      "version": "2.0.0-M24",
+      "description": "Cryptographic library dependency"
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:uuid:af43db8b-b7b6-4238-bdc8-f49e23a7c5d0",
+      "group": "org.apache.directory.server",
+      "name": "apacheds-ldif-partition",
+      "version": "2.0.0-M24",
+      "description": "Cryptographic library dependency"
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:uuid:524c7aa6-acb1-439c-94b7-23cb35ab8fd6",
+      "group": "org.apache.directory.server",
+      "name": "apacheds-mavibot-partition",
+      "version": "2.0.0-M24",
+      "description": "Cryptographic library dependency"
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:uuid:1b6db155-2278-4652-b22e-a50934a6c66b",
+      "group": "org.apache.directory.server",
+      "name": "apacheds-protocol-kerberos",
+      "version": "2.0.0-M24",
+      "description": "Cryptographic library dependency"
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:uuid:1b66f9ba-7bb3-4007-87e6-14bd11860515",
+      "group": "org.apache.directory.server",
+      "name": "apacheds-protocol-ldap",
+      "version": "2.0.0-M24",
+      "description": "Cryptographic library dependency"
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:uuid:919db07c-18c8-4be7-9164-bd65c3e25764",
+      "group": "org.apache.directory.server",
+      "name": "apacheds-protocol-shared",
+      "version": "2.0.0-M24",
+      "description": "Cryptographic library dependency"
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:uuid:0489c6e2-a2b8-4878-9f58-935852ca1f53",
+      "group": "org.bitbucket.b_c",
+      "name": "jose4j",
+      "version": "0.9.4",
+      "description": "Cryptographic library dependency"
+    },
+    {
+      "type": "library",
+      "bom-ref": "urn:uuid:80c7c406-f17e-473e-854e-3efd3cdb50e3",
+      "group": "org.bouncycastle",
+      "name": "bcpkix-jdk18on",
+      "version": "1.78.1",
+      "description": "Cryptographic library dependency"
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:56558ea0-19da-4148-b5b6-20b9cb16fdf6",
+      "name": "HmacSHA512",
+      "description": "mac algorithm via Mac",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "metadata/src/main/java/org/apache/kafka/controller/DelegationTokenControlManager.java",
+            "line": 136,
+            "offset": 18,
+            "additionalContext": "java.security.Mac#getInstance",
+            "source": "llm"
+          },
+          {
+            "location": "metadata/src/main/java/org/apache/kafka/controller/DelegationTokenControlManager.java",
+            "line": 136,
+            "offset": 18,
+            "additionalContext": "javax.crypto.Mac#getInstance(Ljava/lang/String;)Ljavax/crypto/Mac;",
+            "source": "sonarqube"
+          },
+          {
+            "location": "metadata/src/main/java/org/apache/kafka/controller/DelegationTokenControlManager.java",
+            "line": 136,
+            "offset": 19,
+            "additionalContext": "Cryptographic mac algorithm: 'HmacSHA512'",
+            "endOffset": 48,
+            "source": "codeql"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "mac",
+          "variant": "HMACSHA512",
+          "cryptoFunctions": [
+            "tag",
+            "verify"
+          ],
+          "parameterSetIdentifier": "512",
+          "algorithmFamily": "HMAC"
+        },
+        "nistQuantumSecurityLevel": 3,
+        "oid": "1.2.840.113549.2.11"
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:f405e15c-25cb-47e9-ad39-77bce99ca4c9",
+      "name": "JKS",
+      "description": "key-management algorithm via KeyStore",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "clients/src/test/java/org/apache/kafka/test/TestSslUtils.java",
+            "line": 161,
+            "offset": 22,
+            "additionalContext": "java.security.KeyStore#getInstance",
+            "source": "llm"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/test/TestSslUtils.java",
+            "line": 196,
+            "offset": 22,
+            "additionalContext": "java.security.KeyStore#getInstance",
+            "source": "llm"
+          },
+          {
+            "location": "core/src/test/scala/integration/kafka/server/DynamicBrokerReconfigurationTest.scala",
+            "line": 1143,
+            "offset": 15,
+            "additionalContext": "java.security.KeyStore#getInstance",
+            "source": "llm"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/test/TestSslUtils.java",
+            "line": 161,
+            "offset": 23,
+            "additionalContext": "Cryptographic keystore algorithm: 'JKS'",
+            "endOffset": 50,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/test/TestSslUtils.java",
+            "line": 196,
+            "offset": 23,
+            "additionalContext": "Cryptographic keystore algorithm: 'JKS'",
+            "endOffset": 50,
+            "source": "codeql"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-management",
+          "variant": "JKS",
+          "cryptoFunctions": [
+            "store",
+            "retrieve"
+          ]
+        },
+        "nistQuantumSecurityLevel": 0
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:9c0ed3e2-a384-4331-97d9-c83730632212",
+      "name": "PKCS12",
+      "description": "key-management algorithm via KeyStore",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "clients/src/test/java/org/apache/kafka/test/TestSslUtils.java",
+            "line": 810,
+            "offset": 28,
+            "additionalContext": "java.security.KeyStore#getInstance",
+            "source": "llm"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/test/TestSslUtils.java",
+            "line": 817,
+            "offset": 30,
+            "additionalContext": "java.security.KeyStore#getInstance",
+            "source": "llm"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/security/ssl/SslFactoryTest.java",
+            "line": 585,
+            "offset": 22,
+            "additionalContext": "java.security.KeyStore#getInstance",
+            "source": "llm"
+          },
+          {
+            "location": "clients/src/main/java/org/apache/kafka/common/security/ssl/DefaultSslEngineFactory.java",
+            "line": 463,
+            "offset": 30,
+            "additionalContext": "java.security.KeyStore#getInstance",
+            "source": "llm"
+          },
+          {
+            "location": "clients/src/main/java/org/apache/kafka/common/security/ssl/DefaultSslEngineFactory.java",
+            "line": 476,
+            "offset": 30,
+            "additionalContext": "java.security.KeyStore#getInstance",
+            "source": "llm"
+          },
+          {
+            "location": "clients/src/main/java/org/apache/kafka/common/security/ssl/DefaultSslEngineFactory.java",
+            "line": 463,
+            "offset": 31,
+            "additionalContext": "Cryptographic keystore algorithm: 'PKCS12'",
+            "endOffset": 61,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/main/java/org/apache/kafka/common/security/ssl/DefaultSslEngineFactory.java",
+            "line": 476,
+            "offset": 31,
+            "additionalContext": "Cryptographic keystore algorithm: 'PKCS12'",
+            "endOffset": 61,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/security/ssl/SslFactoryTest.java",
+            "line": 585,
+            "offset": 23,
+            "additionalContext": "Cryptographic keystore algorithm: 'PKCS12'",
+            "endOffset": 53,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/test/TestSslUtils.java",
+            "line": 810,
+            "offset": 29,
+            "additionalContext": "Cryptographic keystore algorithm: 'PKCS12'",
+            "endOffset": 59,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/test/TestSslUtils.java",
+            "line": 817,
+            "offset": 31,
+            "additionalContext": "Cryptographic keystore algorithm: 'PKCS12'",
+            "endOffset": 61,
+            "source": "codeql"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-management",
+          "variant": "PKCS12",
+          "cryptoFunctions": [
+            "store",
+            "retrieve"
+          ]
+        },
+        "nistQuantumSecurityLevel": 0,
+        "oid": "1.2.840.113549.1.12.1.1"
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:9ad73b6f-afa6-4ae7-84c6-99948aad48a3",
+      "name": "SHA-256",
+      "description": "hash algorithm via MessageDigest",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "clients/src/main/java/org/apache/kafka/common/security/ssl/CommonNameLoggingTrustManagerFactoryWrapper.java",
+            "line": 183,
+            "offset": 21,
+            "additionalContext": "java.security.MessageDigest#getInstance",
+            "source": "llm"
+          },
+          {
+            "location": "clients/src/main/java/org/apache/kafka/common/security/ssl/CommonNameLoggingTrustManagerFactoryWrapper.java",
+            "line": 183,
+            "offset": 21,
+            "additionalContext": "java.security.MessageDigest#getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;",
+            "source": "sonarqube"
+          },
+          {
+            "location": "clients/src/main/java/org/apache/kafka/common/security/ssl/CommonNameLoggingTrustManagerFactoryWrapper.java",
+            "line": 183,
+            "offset": 22,
+            "additionalContext": "Cryptographic hash algorithm: 'SHA-256'",
+            "endOffset": 58,
+            "source": "codeql"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "variant": "SHA-256",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "parameterSetIdentifier": "256",
+          "algorithmFamily": "SHA-2"
+        },
+        "nistQuantumSecurityLevel": 3,
+        "oid": "2.16.840.1.101.3.4.2.1"
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:fcb6921a-709a-4ddf-8792-7ac013489d9a",
+      "name": "X.509",
+      "description": "certificate algorithm via CertificateFactory",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "clients/src/main/java/org/apache/kafka/common/security/ssl/DefaultSslEngineFactory.java",
+            "line": 497,
+            "offset": 27,
+            "additionalContext": "java.security.CertificateFactory#getInstance",
+            "source": "llm"
+          },
+          {
+            "location": "clients/src/main/java/org/apache/kafka/common/security/ssl/DefaultSslEngineFactory.java",
+            "line": 497,
+            "offset": 28,
+            "additionalContext": "Cryptographic certificate-factory algorithm: 'X.509'",
+            "endOffset": 67,
+            "source": "codeql"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "certificate",
+        "certificateProperties": {
+          "format": "X.509"
+        },
+        "oid": "1.3.6.1.5.5.7.1.1",
+        "nistQuantumSecurityLevel": 0
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:e2fffda5-3ecb-47f5-8d85-06cc86db4a5c",
+      "name": "DSA",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "clients/src/main/java/org/apache/kafka/common/security/ssl/DefaultSslEngineFactory.java",
+            "line": 429,
+            "offset": 27,
+            "source": "sonarqube"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "parameterSetIdentifier": "2048",
+          "cryptoFunctions": [
+            "keygen"
+          ]
+        },
+        "oid": "1.2.840.10040.4.1"
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:2fdeeb42-49cb-4337-a95d-e6caee55cea3",
+      "name": "key@705bcc9f-a6ed-41c1-885b-83223c4293cf",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "clients/src/main/java/org/apache/kafka/common/security/ssl/DefaultSslEngineFactory.java",
+            "line": 430,
+            "offset": 27,
+            "source": "sonarqube"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:cb117be9-d08b-4cad-9f00-210e42363a8f",
+      "name": "secret-key@b9327e47-a35f-45ae-8d1d-9216ec809a53",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "clients/src/main/java/org/apache/kafka/common/security/ssl/DefaultSslEngineFactory.java",
+            "line": 517,
+            "offset": 46,
+            "additionalContext": "javax.crypto.SecretKeyFactory#getInstance(Ljava/lang/String;)Ljavax/crypto/SecretKeyFactory;",
+            "source": "sonarqube"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:81b0d205-b68b-4e83-be98-c8a3c4329237",
+      "name": "key@f816cd9e-3b89-4892-b455-c10997fd0e7a",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "clients/src/main/java/org/apache/kafka/common/security/ssl/DefaultSslEngineFactory.java",
+            "line": 428,
+            "offset": 27,
+            "source": "sonarqube"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:55515909-7780-4fc4-8b43-cc4c597a597f",
+      "name": "PRIVATE KEY",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "clients/src/main/java/org/apache/kafka/common/security/ssl/DefaultSslEngineFactory.java",
+            "line": 517,
+            "offset": 46,
+            "additionalContext": "javax.crypto.SecretKeyFactory#getInstance(Ljava/lang/String;)Ljavax/crypto/SecretKeyFactory;",
+            "source": "sonarqube"
+          },
+          {
+            "location": "clients/src/main/java/org/apache/kafka/common/security/ssl/DefaultSslEngineFactory.java",
+            "line": 519,
+            "offset": 32,
+            "additionalContext": "javax.crypto.Cipher#getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;",
+            "source": "sonarqube"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "other",
+          "cryptoFunctions": [
+            "keygen"
+          ]
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:8dd23808-f8ca-4c12-aa20-939485ba8cfc",
+      "name": "RSA-2048",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "clients/src/main/java/org/apache/kafka/common/security/ssl/DefaultSslEngineFactory.java",
+            "line": 428,
+            "offset": 27,
+            "source": "sonarqube"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "parameterSetIdentifier": "2048",
+          "cryptoFunctions": [
+            "keygen"
+          ]
+        },
+        "oid": "1.2.840.113549.1.1.1"
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:3e0910d8-e20b-4e8c-b69e-42adbca1bb01",
+      "name": "SHA512",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "metadata/src/main/java/org/apache/kafka/controller/DelegationTokenControlManager.java",
+            "line": 136,
+            "offset": 18,
+            "additionalContext": "javax.crypto.Mac#getInstance(Ljava/lang/String;)Ljavax/crypto/Mac;",
+            "source": "sonarqube"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "512",
+          "cryptoFunctions": [
+            "digest"
+          ]
+        },
+        "oid": "2.16.840.1.101.3.4.2.3"
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:b249b99d-144d-43f8-9d30-e8fcd345f9e7",
+      "name": "key@6fba01f0-c5b2-4ded-b722-f2c381d1cdd7",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "clients/src/main/java/org/apache/kafka/common/security/ssl/DefaultSslEngineFactory.java",
+            "line": 429,
+            "offset": 27,
+            "source": "sonarqube"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:f32da6b6-cbbe-48d1-9dfe-9c162ffe3da5",
+      "name": "EC",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "clients/src/main/java/org/apache/kafka/common/security/ssl/DefaultSslEngineFactory.java",
+            "line": 430,
+            "offset": 27,
+            "source": "sonarqube"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "cryptoFunctions": [
+            "keygen"
+          ]
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:ebaeedd5-62d3-496b-a803-86db75d0852e",
+      "name": "hash-unknown",
+      "description": "Cryptographic asset detected by CodeQL: hash",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "clients/src/main/java/org/apache/kafka/common/security/scram/internals/ScramFormatter.java",
+            "line": 52,
+            "offset": 30,
+            "additionalContext": "Cryptographic hash algorithm: 'dynamic/unknown'",
+            "endOffset": 82,
+            "source": "codeql"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "nistQuantumSecurityLevel": 0,
+        "algorithmProperties": {
+          "primitive": "hash",
+          "variant": "HASH-UNKNOWN",
+          "cryptoFunctions": [
+            "digest"
+          ]
+        }
+      },
+      "properties": [
+        {
+          "name": "cdx:crypto:source",
+          "value": "CodeQL"
+        },
+        {
+          "name": "cdx:crypto:ruleId",
+          "value": "java/crypto/algorithm-usage"
+        },
+        {
+          "name": "cdx:crypto:category",
+          "value": "hash"
+        },
+        {
+          "name": "cdx:crypto:occurrenceCount",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:d879356c-bc81-488c-958d-3e0e0256f9f1",
+      "name": "mac-unknown",
+      "description": "Cryptographic asset detected by CodeQL: mac",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "clients/src/main/java/org/apache/kafka/common/security/scram/internals/ScramFormatter.java",
+            "line": 53,
+            "offset": 20,
+            "additionalContext": "Cryptographic mac algorithm: 'dynamic/unknown'",
+            "endOffset": 61,
+            "source": "codeql"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "nistQuantumSecurityLevel": 0,
+        "algorithmProperties": {
+          "primitive": "mac",
+          "variant": "MAC-UNKNOWN",
+          "cryptoFunctions": [
+            "authenticate"
+          ]
+        }
+      },
+      "properties": [
+        {
+          "name": "cdx:crypto:source",
+          "value": "CodeQL"
+        },
+        {
+          "name": "cdx:crypto:ruleId",
+          "value": "java/crypto/algorithm-usage"
+        },
+        {
+          "name": "cdx:crypto:category",
+          "value": "mac"
+        },
+        {
+          "name": "cdx:crypto:occurrenceCount",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:c3742528-25a1-4ade-b364-5ba145007ee7",
+      "name": "keystore-unknown",
+      "description": "Cryptographic asset detected by CodeQL: keystore",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "clients/src/main/java/org/apache/kafka/common/security/ssl/DefaultSslEngineFactory.java",
+            "line": 374,
+            "offset": 31,
+            "additionalContext": "Cryptographic keystore algorithm: 'dynamic/unknown'",
+            "endOffset": 57,
+            "source": "codeql"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "nistQuantumSecurityLevel": 0,
+        "algorithmProperties": {
+          "primitive": "key-management",
+          "variant": "keystore-unknown"
+        }
+      },
+      "properties": [
+        {
+          "name": "cdx:crypto:source",
+          "value": "CodeQL"
+        },
+        {
+          "name": "cdx:crypto:ruleId",
+          "value": "java/crypto/algorithm-usage"
+        },
+        {
+          "name": "cdx:crypto:category",
+          "value": "keystore"
+        },
+        {
+          "name": "cdx:crypto:occurrenceCount",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:c5a4b67d-d19f-4f30-8f37-8cb5397f25e1",
+      "name": "secret-key-factory-unknown",
+      "description": "Cryptographic asset detected by CodeQL: secret-key-factory",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "clients/src/main/java/org/apache/kafka/common/security/ssl/DefaultSslEngineFactory.java",
+            "line": 517,
+            "offset": 47,
+            "additionalContext": "Cryptographic secret-key-factory algorithm: 'dynamic/unknown'",
+            "endOffset": 86,
+            "source": "codeql"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "nistQuantumSecurityLevel": 0,
+        "algorithmProperties": {
+          "primitive": "key-derivation",
+          "variant": "secret-key-factory-unknown"
+        }
+      },
+      "properties": [
+        {
+          "name": "cdx:crypto:source",
+          "value": "CodeQL"
+        },
+        {
+          "name": "cdx:crypto:ruleId",
+          "value": "java/crypto/algorithm-usage"
+        },
+        {
+          "name": "cdx:crypto:category",
+          "value": "secret-key-factory"
+        },
+        {
+          "name": "cdx:crypto:occurrenceCount",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:5ea341e7-70f7-407e-8ff9-8ae1ce0034d3",
+      "name": "cipher-unknown",
+      "description": "Cryptographic asset detected by CodeQL: cipher",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "clients/src/main/java/org/apache/kafka/common/security/ssl/DefaultSslEngineFactory.java",
+            "line": 519,
+            "offset": 33,
+            "additionalContext": "Cryptographic cipher algorithm: 'dynamic/unknown'",
+            "endOffset": 62,
+            "source": "codeql"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "nistQuantumSecurityLevel": 0,
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "variant": "CIPHER-UNKNOWN"
+        }
+      },
+      "properties": [
+        {
+          "name": "cdx:crypto:source",
+          "value": "CodeQL"
+        },
+        {
+          "name": "cdx:crypto:ruleId",
+          "value": "java/crypto/algorithm-usage"
+        },
+        {
+          "name": "cdx:crypto:category",
+          "value": "cipher"
+        },
+        {
+          "name": "cdx:crypto:occurrenceCount",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:f7d94f82-aaf0-40cd-86d0-940dcf9771ec",
+      "name": "keystore-unknown",
+      "description": "Cryptographic asset detected by CodeQL: keystore",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/security/ssl/CommonNameLoggingTrustManagerFactoryWrapperTest.java",
+            "line": 213,
+            "offset": 31,
+            "additionalContext": "Cryptographic keystore algorithm: 'dynamic/unknown'",
+            "endOffset": 78,
+            "source": "codeql"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "nistQuantumSecurityLevel": 0,
+        "algorithmProperties": {
+          "primitive": "key-management",
+          "variant": "keystore-unknown"
+        }
+      },
+      "properties": [
+        {
+          "name": "cdx:crypto:source",
+          "value": "CodeQL"
+        },
+        {
+          "name": "cdx:crypto:ruleId",
+          "value": "java/crypto/algorithm-usage"
+        },
+        {
+          "name": "cdx:crypto:category",
+          "value": "keystore"
+        },
+        {
+          "name": "cdx:crypto:occurrenceCount",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:b5900e40-7c4e-40f2-bc79-5c9ac3d996f5",
+      "name": "keystore-unknown",
+      "description": "Cryptographic asset detected by CodeQL: keystore",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/security/ssl/CommonNameLoggingTrustManagerFactoryWrapperTest.java",
+            "line": 252,
+            "offset": 31,
+            "additionalContext": "Cryptographic keystore algorithm: 'dynamic/unknown'",
+            "endOffset": 78,
+            "source": "codeql"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "nistQuantumSecurityLevel": 0,
+        "algorithmProperties": {
+          "primitive": "key-management",
+          "variant": "keystore-unknown"
+        }
+      },
+      "properties": [
+        {
+          "name": "cdx:crypto:source",
+          "value": "CodeQL"
+        },
+        {
+          "name": "cdx:crypto:ruleId",
+          "value": "java/crypto/algorithm-usage"
+        },
+        {
+          "name": "cdx:crypto:category",
+          "value": "keystore"
+        },
+        {
+          "name": "cdx:crypto:occurrenceCount",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:f7a6ecd9-fab0-4d2a-898c-3616db23ad86",
+      "name": "keystore-unknown",
+      "description": "Cryptographic asset detected by CodeQL: keystore",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/security/ssl/CommonNameLoggingTrustManagerFactoryWrapperTest.java",
+            "line": 289,
+            "offset": 31,
+            "additionalContext": "Cryptographic keystore algorithm: 'dynamic/unknown'",
+            "endOffset": 78,
+            "source": "codeql"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "nistQuantumSecurityLevel": 0,
+        "algorithmProperties": {
+          "primitive": "key-management",
+          "variant": "keystore-unknown"
+        }
+      },
+      "properties": [
+        {
+          "name": "cdx:crypto:source",
+          "value": "CodeQL"
+        },
+        {
+          "name": "cdx:crypto:ruleId",
+          "value": "java/crypto/algorithm-usage"
+        },
+        {
+          "name": "cdx:crypto:category",
+          "value": "keystore"
+        },
+        {
+          "name": "cdx:crypto:occurrenceCount",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:a2d38d7f-2312-42f4-94ef-8fabffdb675f",
+      "name": "keystore-unknown",
+      "description": "Cryptographic asset detected by CodeQL: keystore",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/security/ssl/CommonNameLoggingTrustManagerFactoryWrapperTest.java",
+            "line": 319,
+            "offset": 31,
+            "additionalContext": "Cryptographic keystore algorithm: 'dynamic/unknown'",
+            "endOffset": 78,
+            "source": "codeql"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "nistQuantumSecurityLevel": 0,
+        "algorithmProperties": {
+          "primitive": "key-management",
+          "variant": "keystore-unknown"
+        }
+      },
+      "properties": [
+        {
+          "name": "cdx:crypto:source",
+          "value": "CodeQL"
+        },
+        {
+          "name": "cdx:crypto:ruleId",
+          "value": "java/crypto/algorithm-usage"
+        },
+        {
+          "name": "cdx:crypto:category",
+          "value": "keystore"
+        },
+        {
+          "name": "cdx:crypto:occurrenceCount",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:0bb6ba2a-96fa-4dc3-9c82-e6a2b0f530da",
+      "name": "keystore-unknown",
+      "description": "Cryptographic asset detected by CodeQL: keystore",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/security/ssl/CommonNameLoggingTrustManagerFactoryWrapperTest.java",
+            "line": 365,
+            "offset": 31,
+            "additionalContext": "Cryptographic keystore algorithm: 'dynamic/unknown'",
+            "endOffset": 78,
+            "source": "codeql"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "nistQuantumSecurityLevel": 0,
+        "algorithmProperties": {
+          "primitive": "key-management",
+          "variant": "keystore-unknown"
+        }
+      },
+      "properties": [
+        {
+          "name": "cdx:crypto:source",
+          "value": "CodeQL"
+        },
+        {
+          "name": "cdx:crypto:ruleId",
+          "value": "java/crypto/algorithm-usage"
+        },
+        {
+          "name": "cdx:crypto:category",
+          "value": "keystore"
+        },
+        {
+          "name": "cdx:crypto:occurrenceCount",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:0c6199ee-5bb2-4085-9ad1-76fa2345e6aa",
+      "name": "keystore-unknown",
+      "description": "Cryptographic asset detected by CodeQL: keystore",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/security/ssl/CommonNameLoggingTrustManagerFactoryWrapperTest.java",
+            "line": 408,
+            "offset": 31,
+            "additionalContext": "Cryptographic keystore algorithm: 'dynamic/unknown'",
+            "endOffset": 78,
+            "source": "codeql"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "nistQuantumSecurityLevel": 0,
+        "algorithmProperties": {
+          "primitive": "key-management",
+          "variant": "keystore-unknown"
+        }
+      },
+      "properties": [
+        {
+          "name": "cdx:crypto:source",
+          "value": "CodeQL"
+        },
+        {
+          "name": "cdx:crypto:ruleId",
+          "value": "java/crypto/algorithm-usage"
+        },
+        {
+          "name": "cdx:crypto:category",
+          "value": "keystore"
+        },
+        {
+          "name": "cdx:crypto:occurrenceCount",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:52c7d736-5376-4c33-984c-0ebbbcbba399",
+      "name": "keystore-unknown",
+      "description": "Cryptographic asset detected by CodeQL: keystore",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/security/ssl/CommonNameLoggingTrustManagerFactoryWrapperTest.java",
+            "line": 458,
+            "offset": 31,
+            "additionalContext": "Cryptographic keystore algorithm: 'dynamic/unknown'",
+            "endOffset": 78,
+            "source": "codeql"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "nistQuantumSecurityLevel": 0,
+        "algorithmProperties": {
+          "primitive": "key-management",
+          "variant": "keystore-unknown"
+        }
+      },
+      "properties": [
+        {
+          "name": "cdx:crypto:source",
+          "value": "CodeQL"
+        },
+        {
+          "name": "cdx:crypto:ruleId",
+          "value": "java/crypto/algorithm-usage"
+        },
+        {
+          "name": "cdx:crypto:category",
+          "value": "keystore"
+        },
+        {
+          "name": "cdx:crypto:occurrenceCount",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:1ccffa9f-5f26-4f03-a265-0ecd8e962403",
+      "name": "keystore-unknown",
+      "description": "Cryptographic asset detected by CodeQL: keystore",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "clients/src/test/java/org/apache/kafka/test/TestSslUtils.java",
+            "line": 337,
+            "offset": 27,
+            "additionalContext": "Cryptographic keystore algorithm: 'dynamic/unknown'",
+            "endOffset": 58,
+            "source": "codeql"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "nistQuantumSecurityLevel": 0,
+        "algorithmProperties": {
+          "primitive": "key-management",
+          "variant": "keystore-unknown"
+        }
+      },
+      "properties": [
+        {
+          "name": "cdx:crypto:source",
+          "value": "CodeQL"
+        },
+        {
+          "name": "cdx:crypto:ruleId",
+          "value": "java/crypto/algorithm-usage"
+        },
+        {
+          "name": "cdx:crypto:category",
+          "value": "keystore"
+        },
+        {
+          "name": "cdx:crypto:occurrenceCount",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:5125bd39-d38c-496d-9cad-c3d63eabd424",
+      "name": "keystore-unknown",
+      "description": "Cryptographic asset detected by CodeQL: keystore",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "clients/src/test/java/org/apache/kafka/test/TestSslUtils.java",
+            "line": 363,
+            "offset": 27,
+            "additionalContext": "Cryptographic keystore algorithm: 'dynamic/unknown'",
+            "endOffset": 58,
+            "source": "codeql"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "nistQuantumSecurityLevel": 0,
+        "algorithmProperties": {
+          "primitive": "key-management",
+          "variant": "keystore-unknown"
+        }
+      },
+      "properties": [
+        {
+          "name": "cdx:crypto:source",
+          "value": "CodeQL"
+        },
+        {
+          "name": "cdx:crypto:ruleId",
+          "value": "java/crypto/algorithm-usage"
+        },
+        {
+          "name": "cdx:crypto:category",
+          "value": "keystore"
+        },
+        {
+          "name": "cdx:crypto:occurrenceCount",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:82d6245b-d343-469b-a11a-77e3a1f5a958",
+      "name": "mac-unknown",
+      "description": "Cryptographic asset detected by CodeQL: mac",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "connect/runtime/src/main/java/org/apache/kafka/connect/runtime/distributed/Crypto.java",
+            "line": 61,
+            "offset": 20,
+            "additionalContext": "Cryptographic mac algorithm: 'dynamic/unknown'",
+            "endOffset": 46,
+            "source": "codeql"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "nistQuantumSecurityLevel": 0,
+        "algorithmProperties": {
+          "primitive": "mac",
+          "variant": "MAC-UNKNOWN",
+          "cryptoFunctions": [
+            "authenticate"
+          ]
+        }
+      },
+      "properties": [
+        {
+          "name": "cdx:crypto:source",
+          "value": "CodeQL"
+        },
+        {
+          "name": "cdx:crypto:ruleId",
+          "value": "java/crypto/algorithm-usage"
+        },
+        {
+          "name": "cdx:crypto:category",
+          "value": "mac"
+        },
+        {
+          "name": "cdx:crypto:occurrenceCount",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:8ccfa788-0414-45f2-b9c1-a256c8c1fd50",
+      "name": "key-generator-unknown",
+      "description": "Cryptographic asset detected by CodeQL: key-generator",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "connect/runtime/src/main/java/org/apache/kafka/connect/runtime/distributed/Crypto.java",
+            "line": 66,
+            "offset": 20,
+            "additionalContext": "Cryptographic key-generator algorithm: 'dynamic/unknown'",
+            "endOffset": 55,
+            "source": "codeql"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "nistQuantumSecurityLevel": 0,
+        "algorithmProperties": {
+          "primitive": "key-generation",
+          "variant": "KEY-GENERATOR-UNKNOWN",
+          "cryptoFunctions": [
+            "keygen"
+          ]
+        }
+      },
+      "properties": [
+        {
+          "name": "cdx:crypto:source",
+          "value": "CodeQL"
+        },
+        {
+          "name": "cdx:crypto:ruleId",
+          "value": "java/crypto/algorithm-usage"
+        },
+        {
+          "name": "cdx:crypto:category",
+          "value": "key-generator"
+        },
+        {
+          "name": "cdx:crypto:occurrenceCount",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:21b87a5a-ec15-4163-9736-6c8331622c00",
+      "name": "mac-unknown",
+      "description": "Cryptographic asset detected by CodeQL: mac",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "connect/runtime/src/test/java/org/apache/kafka/connect/runtime/rest/InternalRequestSignatureTest.java",
+            "line": 133,
+            "offset": 19,
+            "additionalContext": "Cryptographic mac algorithm: 'dynamic/unknown'",
+            "endOffset": 55,
+            "source": "codeql"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "nistQuantumSecurityLevel": 0,
+        "algorithmProperties": {
+          "primitive": "mac",
+          "variant": "MAC-UNKNOWN",
+          "cryptoFunctions": [
+            "authenticate"
+          ]
+        }
+      },
+      "properties": [
+        {
+          "name": "cdx:crypto:source",
+          "value": "CodeQL"
+        },
+        {
+          "name": "cdx:crypto:ruleId",
+          "value": "java/crypto/algorithm-usage"
+        },
+        {
+          "name": "cdx:crypto:category",
+          "value": "mac"
+        },
+        {
+          "name": "cdx:crypto:occurrenceCount",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:689fac10-89cd-458a-8e1f-2fa153512ff0",
+      "name": "mac-unknown",
+      "description": "Cryptographic asset detected by CodeQL: mac",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "connect/runtime/src/test/java/org/apache/kafka/connect/runtime/rest/resources/InternalConnectResourceTest.java",
+            "line": 135,
+            "offset": 17,
+            "additionalContext": "Cryptographic mac algorithm: 'dynamic/unknown'",
+            "endOffset": 52,
+            "source": "codeql"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "nistQuantumSecurityLevel": 0,
+        "algorithmProperties": {
+          "primitive": "mac",
+          "variant": "MAC-UNKNOWN",
+          "cryptoFunctions": [
+            "authenticate"
+          ]
+        }
+      },
+      "properties": [
+        {
+          "name": "cdx:crypto:source",
+          "value": "CodeQL"
+        },
+        {
+          "name": "cdx:crypto:ruleId",
+          "value": "java/crypto/algorithm-usage"
+        },
+        {
+          "name": "cdx:crypto:category",
+          "value": "mac"
+        },
+        {
+          "name": "cdx:crypto:occurrenceCount",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:5d38a90f-d78c-4443-9d38-cc3750c449a2",
+      "name": "mac-unknown",
+      "description": "Cryptographic asset detected by CodeQL: mac",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "connect/runtime/src/test/java/org/apache/kafka/connect/runtime/rest/resources/InternalConnectResourceTest.java",
+            "line": 193,
+            "offset": 17,
+            "additionalContext": "Cryptographic mac algorithm: 'dynamic/unknown'",
+            "endOffset": 52,
+            "source": "codeql"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "nistQuantumSecurityLevel": 0,
+        "algorithmProperties": {
+          "primitive": "mac",
+          "variant": "MAC-UNKNOWN",
+          "cryptoFunctions": [
+            "authenticate"
+          ]
+        }
+      },
+      "properties": [
+        {
+          "name": "cdx:crypto:source",
+          "value": "CodeQL"
+        },
+        {
+          "name": "cdx:crypto:ruleId",
+          "value": "java/crypto/algorithm-usage"
+        },
+        {
+          "name": "cdx:crypto:category",
+          "value": "mac"
+        },
+        {
+          "name": "cdx:crypto:occurrenceCount",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:c2cf9814-3df5-45d3-841e-374fc0247558",
+      "name": "hash-unknown",
+      "description": "Cryptographic asset detected by CodeQL: hash",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "storage/src/main/java/org/apache/kafka/storage/internals/log/SkimpyOffsetMap.java",
+            "line": 86,
+            "offset": 23,
+            "additionalContext": "Cryptographic hash algorithm: 'dynamic/unknown'",
+            "endOffset": 63,
+            "source": "codeql"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "nistQuantumSecurityLevel": 0,
+        "algorithmProperties": {
+          "primitive": "hash",
+          "variant": "HASH-UNKNOWN",
+          "cryptoFunctions": [
+            "digest"
+          ]
+        }
+      },
+      "properties": [
+        {
+          "name": "cdx:crypto:source",
+          "value": "CodeQL"
+        },
+        {
+          "name": "cdx:crypto:ruleId",
+          "value": "java/crypto/algorithm-usage"
+        },
+        {
+          "name": "cdx:crypto:category",
+          "value": "hash"
+        },
+        {
+          "name": "cdx:crypto:occurrenceCount",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:cc84495f-704c-4d72-8426-c2a4cd6abfd1",
+      "name": "keystore-load",
+      "description": "Cryptographic asset detected by CodeQL: key-management",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "clients/src/main/java/org/apache/kafka/common/security/ssl/DefaultSslEngineFactory.java",
+            "line": 377,
+            "offset": 17,
+            "additionalContext": "Key management operation: keystore-load",
+            "endOffset": 43,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/main/java/org/apache/kafka/common/security/ssl/DefaultSslEngineFactory.java",
+            "line": 464,
+            "offset": 17,
+            "additionalContext": "Key management operation: keystore-load",
+            "endOffset": 36,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/main/java/org/apache/kafka/common/security/ssl/DefaultSslEngineFactory.java",
+            "line": 477,
+            "offset": 17,
+            "additionalContext": "Key management operation: keystore-load",
+            "endOffset": 36,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/security/ssl/CommonNameLoggingTrustManagerFactoryWrapperTest.java",
+            "line": 214,
+            "offset": 9,
+            "additionalContext": "Key management operation: keystore-load",
+            "endOffset": 36,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/security/ssl/CommonNameLoggingTrustManagerFactoryWrapperTest.java",
+            "line": 253,
+            "offset": 9,
+            "additionalContext": "Key management operation: keystore-load",
+            "endOffset": 36,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/security/ssl/CommonNameLoggingTrustManagerFactoryWrapperTest.java",
+            "line": 290,
+            "offset": 9,
+            "additionalContext": "Key management operation: keystore-load",
+            "endOffset": 36,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/security/ssl/CommonNameLoggingTrustManagerFactoryWrapperTest.java",
+            "line": 320,
+            "offset": 9,
+            "additionalContext": "Key management operation: keystore-load",
+            "endOffset": 36,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/security/ssl/CommonNameLoggingTrustManagerFactoryWrapperTest.java",
+            "line": 366,
+            "offset": 9,
+            "additionalContext": "Key management operation: keystore-load",
+            "endOffset": 36,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/security/ssl/CommonNameLoggingTrustManagerFactoryWrapperTest.java",
+            "line": 409,
+            "offset": 9,
+            "additionalContext": "Key management operation: keystore-load",
+            "endOffset": 36,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/security/ssl/CommonNameLoggingTrustManagerFactoryWrapperTest.java",
+            "line": 459,
+            "offset": 9,
+            "additionalContext": "Key management operation: keystore-load",
+            "endOffset": 36,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/security/ssl/SslFactoryTest.java",
+            "line": 586,
+            "offset": 9,
+            "additionalContext": "Key management operation: keystore-load",
+            "endOffset": 28,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/test/TestSslUtils.java",
+            "line": 162,
+            "offset": 9,
+            "additionalContext": "Key management operation: keystore-load",
+            "endOffset": 28,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/test/TestSslUtils.java",
+            "line": 198,
+            "offset": 13,
+            "additionalContext": "Key management operation: keystore-load",
+            "endOffset": 56,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/test/TestSslUtils.java",
+            "line": 338,
+            "offset": 13,
+            "additionalContext": "Key management operation: keystore-load",
+            "endOffset": 61,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/test/TestSslUtils.java",
+            "line": 364,
+            "offset": 13,
+            "additionalContext": "Key management operation: keystore-load",
+            "endOffset": 61,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/test/TestSslUtils.java",
+            "line": 811,
+            "offset": 9,
+            "additionalContext": "Key management operation: keystore-load",
+            "endOffset": 34,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/test/TestSslUtils.java",
+            "line": 818,
+            "offset": 9,
+            "additionalContext": "Key management operation: keystore-load",
+            "endOffset": 36,
+            "source": "codeql"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "nistQuantumSecurityLevel": 0,
+        "relatedCryptoMaterialProperties": {
+          "type": "key-management"
+        }
+      },
+      "properties": [
+        {
+          "name": "cdx:crypto:source",
+          "value": "CodeQL"
+        },
+        {
+          "name": "cdx:crypto:ruleId",
+          "value": "java/crypto/key-management"
+        },
+        {
+          "name": "cdx:crypto:category",
+          "value": "key-management"
+        },
+        {
+          "name": "cdx:crypto:occurrenceCount",
+          "value": "17"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:ab8bb23c-2869-4f97-98ad-044413a233af",
+      "name": "key-storage",
+      "description": "Cryptographic asset detected by CodeQL: key-management",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "clients/src/main/java/org/apache/kafka/common/security/ssl/DefaultSslEngineFactory.java",
+            "line": 467,
+            "offset": 17,
+            "additionalContext": "Key management operation: key-storage",
+            "endOffset": 69,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/security/ssl/SslFactoryTest.java",
+            "line": 587,
+            "offset": 9,
+            "additionalContext": "Key management operation: key-storage",
+            "endOffset": 90,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/test/TestSslUtils.java",
+            "line": 189,
+            "offset": 9,
+            "additionalContext": "Key management operation: key-storage",
+            "endLine": 190,
+            "endOffset": 41,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/test/TestSslUtils.java",
+            "line": 812,
+            "offset": 9,
+            "additionalContext": "Key management operation: key-storage",
+            "endOffset": 117,
+            "source": "codeql"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "nistQuantumSecurityLevel": 0,
+        "relatedCryptoMaterialProperties": {
+          "type": "key-management"
+        }
+      },
+      "properties": [
+        {
+          "name": "cdx:crypto:source",
+          "value": "CodeQL"
+        },
+        {
+          "name": "cdx:crypto:ruleId",
+          "value": "java/crypto/key-management"
+        },
+        {
+          "name": "cdx:crypto:category",
+          "value": "key-management"
+        },
+        {
+          "name": "cdx:crypto:occurrenceCount",
+          "value": "4"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:63c71ce2-771a-4514-9c96-ed104f37e00f",
+      "name": "key-retrieval",
+      "description": "Cryptographic asset detected by CodeQL: key-management",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/security/ssl/DefaultSslEngineFactoryTest.java",
+            "line": 221,
+            "offset": 20,
+            "additionalContext": "Key management operation: key-retrieval",
+            "endOffset": 53,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/security/ssl/DefaultSslEngineFactoryTest.java",
+            "line": 234,
+            "offset": 20,
+            "additionalContext": "Key management operation: key-retrieval",
+            "endOffset": 53,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/security/ssl/DefaultSslEngineFactoryTest.java",
+            "line": 236,
+            "offset": 20,
+            "additionalContext": "Key management operation: key-retrieval",
+            "endOffset": 53,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/security/ssl/DefaultSslEngineFactoryTest.java",
+            "line": 275,
+            "offset": 23,
+            "additionalContext": "Key management operation: key-retrieval",
+            "endOffset": 111,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/security/ssl/DefaultSslEngineFactoryTest.java",
+            "line": 289,
+            "offset": 20,
+            "additionalContext": "Key management operation: key-retrieval",
+            "endOffset": 53,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/security/ssl/DefaultSslEngineFactoryTest.java",
+            "line": 304,
+            "offset": 23,
+            "additionalContext": "Key management operation: key-retrieval",
+            "endOffset": 53,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/security/ssl/DefaultSslEngineFactoryTest.java",
+            "line": 319,
+            "offset": 23,
+            "additionalContext": "Key management operation: key-retrieval",
+            "endOffset": 83,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/test/TestSslUtils.java",
+            "line": 366,
+            "offset": 50,
+            "additionalContext": "Key management operation: key-retrieval",
+            "endOffset": 101,
+            "source": "codeql"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "nistQuantumSecurityLevel": 0,
+        "relatedCryptoMaterialProperties": {
+          "type": "key-management"
+        }
+      },
+      "properties": [
+        {
+          "name": "cdx:crypto:source",
+          "value": "CodeQL"
+        },
+        {
+          "name": "cdx:crypto:ruleId",
+          "value": "java/crypto/key-management"
+        },
+        {
+          "name": "cdx:crypto:category",
+          "value": "key-management"
+        },
+        {
+          "name": "cdx:crypto:occurrenceCount",
+          "value": "8"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:bb56d8e9-bf39-401d-9853-0e9cff0ff95f",
+      "name": "keystore-store",
+      "description": "Cryptographic asset detected by CodeQL: key-management",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "clients/src/test/java/org/apache/kafka/test/TestSslUtils.java",
+            "line": 169,
+            "offset": 13,
+            "additionalContext": "Key management operation: keystore-store",
+            "endOffset": 58,
+            "source": "codeql"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "nistQuantumSecurityLevel": 0,
+        "relatedCryptoMaterialProperties": {
+          "type": "key-management"
+        }
+      },
+      "properties": [
+        {
+          "name": "cdx:crypto:source",
+          "value": "CodeQL"
+        },
+        {
+          "name": "cdx:crypto:ruleId",
+          "value": "java/crypto/key-management"
+        },
+        {
+          "name": "cdx:crypto:category",
+          "value": "key-management"
+        },
+        {
+          "name": "cdx:crypto:occurrenceCount",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:f5d5e48b-ba2f-4b1b-af78-390ab3498d5c",
+      "name": "symmetric-key-generation",
+      "description": "Cryptographic asset detected by CodeQL: key-management",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "connect/runtime/src/main/java/org/apache/kafka/connect/runtime/distributed/DistributedHerder.java",
+            "line": 470,
+            "offset": 59,
+            "additionalContext": "Key management operation: symmetric-key-generation",
+            "endOffset": 85,
+            "source": "codeql"
+          },
+          {
+            "location": "connect/runtime/src/main/java/org/apache/kafka/connect/runtime/distributed/DistributedHerder.java",
+            "line": 604,
+            "offset": 55,
+            "additionalContext": "Key management operation: symmetric-key-generation",
+            "endOffset": 81,
+            "source": "codeql"
+          },
+          {
+            "location": "connect/runtime/src/test/java/org/apache/kafka/connect/runtime/distributed/DistributedConfigTest.java",
+            "line": 169,
+            "offset": 31,
+            "additionalContext": "Key management operation: symmetric-key-generation",
+            "endOffset": 57,
+            "source": "codeql"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "nistQuantumSecurityLevel": 0,
+        "relatedCryptoMaterialProperties": {
+          "type": "key-management"
+        }
+      },
+      "properties": [
+        {
+          "name": "cdx:crypto:source",
+          "value": "CodeQL"
+        },
+        {
+          "name": "cdx:crypto:ruleId",
+          "value": "java/crypto/key-management"
+        },
+        {
+          "name": "cdx:crypto:category",
+          "value": "key-management"
+        },
+        {
+          "name": "cdx:crypto:occurrenceCount",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:46183ba3-c74e-4745-a172-6e3a4bbcd41f",
+      "name": "SecureRandom",
+      "description": "Cryptographic asset detected by CodeQL: random",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "clients/src/main/java/org/apache/kafka/common/security/ssl/DefaultSslEngineFactory.java",
+            "line": 231,
+            "offset": 20,
+            "additionalContext": "Random number generation using SecureRandom",
+            "endOffset": 49,
+            "source": "codeql"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "nistQuantumSecurityLevel": 0,
+        "algorithmProperties": {
+          "primitive": "random",
+          "variant": "SecureRandom"
+        }
+      },
+      "properties": [
+        {
+          "name": "cdx:crypto:source",
+          "value": "CodeQL"
+        },
+        {
+          "name": "cdx:crypto:ruleId",
+          "value": "java/crypto/random-generation"
+        },
+        {
+          "name": "cdx:crypto:category",
+          "value": "random"
+        },
+        {
+          "name": "cdx:crypto:occurrenceCount",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:ea52d020-7ad1-4138-819a-63776b3592f9",
+      "name": "java.util.Random",
+      "description": "Cryptographic asset detected by CodeQL: random-insecure",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "clients/src/test/java/org/apache/kafka/clients/producer/internals/RecordAccumulatorTest.java",
+            "line": 1584,
+            "offset": 9,
+            "additionalContext": "Random number generation using java.util.Random (INSECURE)",
+            "endOffset": 32,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/compress/Lz4CompressionTest.java",
+            "line": 182,
+            "offset": 17,
+            "additionalContext": "Random number generation using java.util.Random (INSECURE)",
+            "endOffset": 41,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/network/SelectorTest.java",
+            "line": 750,
+            "offset": 9,
+            "additionalContext": "Random number generation using java.util.Random (INSECURE)",
+            "endOffset": 34,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/record/ArbitraryMemoryRecords.java",
+            "line": 35,
+            "offset": 9,
+            "additionalContext": "Random number generation using java.util.Random (INSECURE)",
+            "endOffset": 32,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/record/DefaultRecordBatchTest.java",
+            "line": 405,
+            "offset": 9,
+            "additionalContext": "Random number generation using java.util.Random (INSECURE)",
+            "endOffset": 43,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/record/DefaultRecordBatchTest.java",
+            "line": 478,
+            "offset": 9,
+            "additionalContext": "Random number generation using java.util.Random (INSECURE)",
+            "endOffset": 43,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/record/DefaultRecordBatchTest.java",
+            "line": 538,
+            "offset": 9,
+            "additionalContext": "Random number generation using java.util.Random (INSECURE)",
+            "endOffset": 43,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/security/authenticator/SaslAuthenticatorTest.java",
+            "line": 233,
+            "offset": 9,
+            "additionalContext": "Random number generation using java.util.Random (INSECURE)",
+            "endOffset": 38,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/security/authenticator/SaslAuthenticatorTest.java",
+            "line": 918,
+            "offset": 9,
+            "additionalContext": "Random number generation using java.util.Random (INSECURE)",
+            "endOffset": 32,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/security/authenticator/SaslAuthenticatorTest.java",
+            "line": 929,
+            "offset": 9,
+            "additionalContext": "Random number generation using java.util.Random (INSECURE)",
+            "endOffset": 32,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/security/oauthbearer/internals/secured/HttpAccessTokenRetrieverTest.java",
+            "line": 124,
+            "offset": 9,
+            "additionalContext": "Random number generation using java.util.Random (INSECURE)",
+            "endOffset": 30,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/utils/ChunkedBytesStreamTest.java",
+            "line": 128,
+            "offset": 9,
+            "additionalContext": "Random number generation using java.util.Random (INSECURE)",
+            "endOffset": 43,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/utils/ChunkedBytesStreamTest.java",
+            "line": 167,
+            "offset": 9,
+            "additionalContext": "Random number generation using java.util.Random (INSECURE)",
+            "endOffset": 43,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/utils/ChunkedBytesStreamTest.java",
+            "line": 204,
+            "offset": 9,
+            "additionalContext": "Random number generation using java.util.Random (INSECURE)",
+            "endOffset": 64,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/utils/ChunkedBytesStreamTest.java",
+            "line": 209,
+            "offset": 9,
+            "additionalContext": "Random number generation using java.util.Random (INSECURE)",
+            "endOffset": 68,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/utils/ChunkedBytesStreamTest.java",
+            "line": 250,
+            "offset": 9,
+            "additionalContext": "Random number generation using java.util.Random (INSECURE)",
+            "endOffset": 64,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/utils/ChunkedBytesStreamTest.java",
+            "line": 254,
+            "offset": 9,
+            "additionalContext": "Random number generation using java.util.Random (INSECURE)",
+            "endOffset": 68,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/test/TestUtils.java",
+            "line": 197,
+            "offset": 9,
+            "additionalContext": "Random number generation using java.util.Random (INSECURE)",
+            "endOffset": 39,
+            "source": "codeql"
+          },
+          {
+            "location": "jmh-benchmarks/src/main/java/org/apache/kafka/jmh/log/TestLinearWriteSpeed.java",
+            "line": 148,
+            "offset": 9,
+            "additionalContext": "Random number generation using java.util.Random (INSECURE)",
+            "endOffset": 62,
+            "source": "codeql"
+          },
+          {
+            "location": "jmh-benchmarks/src/main/java/org/apache/kafka/jmh/record/BaseRecordBatchBenchmark.java",
+            "line": 152,
+            "offset": 21,
+            "additionalContext": "Random number generation using java.util.Random (INSECURE)",
+            "endOffset": 44,
+            "source": "codeql"
+          },
+          {
+            "location": "metadata/src/test/java/org/apache/kafka/image/ScramImageTest.java",
+            "line": 59,
+            "offset": 9,
+            "additionalContext": "Random number generation using java.util.Random (INSECURE)",
+            "endOffset": 30,
+            "source": "codeql"
+          },
+          {
+            "location": "metadata/src/test/java/org/apache/kafka/image/node/ScramCredentialDataNodeTest.java",
+            "line": 36,
+            "offset": 9,
+            "additionalContext": "Random number generation using java.util.Random (INSECURE)",
+            "endOffset": 35,
+            "source": "codeql"
+          },
+          {
+            "location": "metadata/src/test/java/org/apache/kafka/image/node/ScramCredentialDataNodeTest.java",
+            "line": 38,
+            "offset": 9,
+            "additionalContext": "Random number generation using java.util.Random (INSECURE)",
+            "endOffset": 40,
+            "source": "codeql"
+          },
+          {
+            "location": "metadata/src/test/java/org/apache/kafka/image/node/ScramCredentialDataNodeTest.java",
+            "line": 40,
+            "offset": 9,
+            "additionalContext": "Random number generation using java.util.Random (INSECURE)",
+            "endOffset": 40,
+            "source": "codeql"
+          },
+          {
+            "location": "metadata/src/test/java/org/apache/kafka/metadata/ScramCredentialDataTest.java",
+            "line": 42,
+            "offset": 9,
+            "additionalContext": "Random number generation using java.util.Random (INSECURE)",
+            "endOffset": 30,
+            "source": "codeql"
+          },
+          {
+            "location": "raft/src/test/java/org/apache/kafka/snapshot/FileRawSnapshotTest.java",
+            "line": 339,
+            "offset": 9,
+            "additionalContext": "Random number generation using java.util.Random (INSECURE)",
+            "endOffset": 49,
+            "source": "codeql"
+          },
+          {
+            "location": "trogdor/src/main/java/org/apache/kafka/trogdor/workload/GaussianTimestampRandomPayloadGenerator.java",
+            "line": 119,
+            "offset": 9,
+            "additionalContext": "Random number generation using java.util.Random (INSECURE)",
+            "endOffset": 33,
+            "source": "codeql"
+          },
+          {
+            "location": "trogdor/src/main/java/org/apache/kafka/trogdor/workload/TimestampRandomPayloadGenerator.java",
+            "line": 92,
+            "offset": 13,
+            "additionalContext": "Random number generation using java.util.Random (INSECURE)",
+            "endOffset": 42,
+            "source": "codeql"
+          },
+          {
+            "location": "trogdor/src/main/java/org/apache/kafka/trogdor/workload/UniformRandomPayloadGenerator.java",
+            "line": 57,
+            "offset": 9,
+            "additionalContext": "Random number generation using java.util.Random (INSECURE)",
+            "endOffset": 35,
+            "source": "codeql"
+          },
+          {
+            "location": "trogdor/src/main/java/org/apache/kafka/trogdor/workload/UniformRandomPayloadGenerator.java",
+            "line": 81,
+            "offset": 13,
+            "additionalContext": "Random number generation using java.util.Random (INSECURE)",
+            "endOffset": 42,
+            "source": "codeql"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "nistQuantumSecurityLevel": 0,
+        "algorithmProperties": {
+          "primitive": "random",
+          "variant": "java.util.Random"
+        }
+      },
+      "properties": [
+        {
+          "name": "cdx:crypto:source",
+          "value": "CodeQL"
+        },
+        {
+          "name": "cdx:crypto:ruleId",
+          "value": "java/crypto/random-generation"
+        },
+        {
+          "name": "cdx:crypto:category",
+          "value": "random-insecure"
+        },
+        {
+          "name": "cdx:crypto:occurrenceCount",
+          "value": "30"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:1b4df9fb-64d3-4813-8da6-50146ff7def6",
+      "name": "TLS/SSL Configuration",
+      "description": "Cryptographic asset detected by CodeQL: tls-configuration",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "clients/src/main/java/org/apache/kafka/common/security/oauthbearer/internals/secured/HttpAccessTokenRetriever.java",
+            "line": 174,
+            "offset": 25,
+            "additionalContext": "TLS/SSL TLS/SSL Configuration configuration: 'dynamic/unknown'",
+            "endOffset": 89,
+            "source": "codeql"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "nistQuantumSecurityLevel": 0,
+        "algorithmProperties": {
+          "primitive": "protocol",
+          "variant": "TLS/SSL Configuration"
+        }
+      },
+      "properties": [
+        {
+          "name": "cdx:crypto:source",
+          "value": "CodeQL"
+        },
+        {
+          "name": "cdx:crypto:ruleId",
+          "value": "java/crypto/tls-configuration"
+        },
+        {
+          "name": "cdx:crypto:category",
+          "value": "tls-configuration"
+        },
+        {
+          "name": "cdx:crypto:occurrenceCount",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:65bbae17-01f5-4593-95ff-c3b9650d4405",
+      "name": "SSLEngine",
+      "description": "Cryptographic asset detected by CodeQL: tls-configuration",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "clients/src/main/java/org/apache/kafka/common/security/ssl/DefaultSslEngineFactory.java",
+            "line": 190,
+            "offset": 39,
+            "additionalContext": "TLS/SSL SSLEngine configuration: 'dynamic/unknown'",
+            "endOffset": 86,
+            "source": "codeql"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "nistQuantumSecurityLevel": 0,
+        "algorithmProperties": {
+          "primitive": "protocol",
+          "variant": "SSLEngine"
+        }
+      },
+      "properties": [
+        {
+          "name": "cdx:crypto:source",
+          "value": "CodeQL"
+        },
+        {
+          "name": "cdx:crypto:ruleId",
+          "value": "java/crypto/tls-configuration"
+        },
+        {
+          "name": "cdx:crypto:category",
+          "value": "tls-configuration"
+        },
+        {
+          "name": "cdx:crypto:occurrenceCount",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "urn:uuid:7369edf6-4dea-4b39-b586-452c873dd28f",
+      "name": "SSLContext",
+      "description": "Cryptographic asset detected by CodeQL: tls-configuration",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "clients/src/main/java/org/apache/kafka/common/security/ssl/DefaultSslEngineFactory.java",
+            "line": 241,
+            "offset": 30,
+            "additionalContext": "TLS/SSL SSLContext configuration: 'dynamic/unknown'",
+            "endOffset": 72,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/main/java/org/apache/kafka/common/security/ssl/DefaultSslEngineFactory.java",
+            "line": 243,
+            "offset": 30,
+            "additionalContext": "TLS/SSL SSLContext configuration: 'dynamic/unknown'",
+            "endOffset": 62,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/network/SslSender.java",
+            "line": 48,
+            "offset": 29,
+            "additionalContext": "TLS/SSL SSLContext configuration: 'dynamic/unknown'",
+            "endOffset": 64,
+            "source": "codeql"
+          },
+          {
+            "location": "clients/src/test/java/org/apache/kafka/common/network/SslTransportLayerTest.java",
+            "line": 643,
+            "offset": 30,
+            "additionalContext": "TLS/SSL SSLContext configuration: 'dynamic/unknown'",
+            "endOffset": 70,
+            "source": "codeql"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "nistQuantumSecurityLevel": 0,
+        "algorithmProperties": {
+          "primitive": "protocol",
+          "variant": "SSLContext"
+        }
+      },
+      "properties": [
+        {
+          "name": "cdx:crypto:source",
+          "value": "CodeQL"
+        },
+        {
+          "name": "cdx:crypto:ruleId",
+          "value": "java/crypto/tls-configuration"
+        },
+        {
+          "name": "cdx:crypto:category",
+          "value": "tls-configuration"
+        },
+        {
+          "name": "cdx:crypto:occurrenceCount",
+          "value": "4"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "urn:uuid:a6e8be27-d9d1-4495-b3fc-b8f92f13fb61",
+      "dependsOn": [
+        "urn:uuid:c5f2bfd7-d365-4a60-953a-59628cd64d13",
+        "urn:uuid:6f3812cf-c6ac-459a-8855-5c73d5fe3097",
+        "urn:uuid:b6638a1f-f850-4712-8e3c-35ccc786cc15",
+        "urn:uuid:af43db8b-b7b6-4238-bdc8-f49e23a7c5d0",
+        "urn:uuid:524c7aa6-acb1-439c-94b7-23cb35ab8fd6",
+        "urn:uuid:1b6db155-2278-4652-b22e-a50934a6c66b",
+        "urn:uuid:1b66f9ba-7bb3-4007-87e6-14bd11860515",
+        "urn:uuid:919db07c-18c8-4be7-9164-bd65c3e25764",
+        "urn:uuid:0489c6e2-a2b8-4878-9f58-935852ca1f53",
+        "urn:uuid:80c7c406-f17e-473e-854e-3efd3cdb50e3",
+        "urn:uuid:56558ea0-19da-4148-b5b6-20b9cb16fdf6",
+        "urn:uuid:f405e15c-25cb-47e9-ad39-77bce99ca4c9",
+        "urn:uuid:9c0ed3e2-a384-4331-97d9-c83730632212",
+        "urn:uuid:9ad73b6f-afa6-4ae7-84c6-99948aad48a3",
+        "urn:uuid:fcb6921a-709a-4ddf-8792-7ac013489d9a",
+        "urn:uuid:e2fffda5-3ecb-47f5-8d85-06cc86db4a5c",
+        "urn:uuid:2fdeeb42-49cb-4337-a95d-e6caee55cea3",
+        "urn:uuid:cb117be9-d08b-4cad-9f00-210e42363a8f",
+        "urn:uuid:81b0d205-b68b-4e83-be98-c8a3c4329237",
+        "urn:uuid:55515909-7780-4fc4-8b43-cc4c597a597f",
+        "urn:uuid:8dd23808-f8ca-4c12-aa20-939485ba8cfc",
+        "urn:uuid:3e0910d8-e20b-4e8c-b69e-42adbca1bb01",
+        "urn:uuid:b249b99d-144d-43f8-9d30-e8fcd345f9e7",
+        "urn:uuid:f32da6b6-cbbe-48d1-9dfe-9c162ffe3da5",
+        "urn:uuid:ebaeedd5-62d3-496b-a803-86db75d0852e",
+        "urn:uuid:d879356c-bc81-488c-958d-3e0e0256f9f1",
+        "urn:uuid:c3742528-25a1-4ade-b364-5ba145007ee7",
+        "urn:uuid:c5a4b67d-d19f-4f30-8f37-8cb5397f25e1",
+        "urn:uuid:5ea341e7-70f7-407e-8ff9-8ae1ce0034d3",
+        "urn:uuid:f7d94f82-aaf0-40cd-86d0-940dcf9771ec",
+        "urn:uuid:b5900e40-7c4e-40f2-bc79-5c9ac3d996f5",
+        "urn:uuid:f7a6ecd9-fab0-4d2a-898c-3616db23ad86",
+        "urn:uuid:a2d38d7f-2312-42f4-94ef-8fabffdb675f",
+        "urn:uuid:0bb6ba2a-96fa-4dc3-9c82-e6a2b0f530da",
+        "urn:uuid:0c6199ee-5bb2-4085-9ad1-76fa2345e6aa",
+        "urn:uuid:52c7d736-5376-4c33-984c-0ebbbcbba399",
+        "urn:uuid:1ccffa9f-5f26-4f03-a265-0ecd8e962403",
+        "urn:uuid:5125bd39-d38c-496d-9cad-c3d63eabd424",
+        "urn:uuid:82d6245b-d343-469b-a11a-77e3a1f5a958",
+        "urn:uuid:8ccfa788-0414-45f2-b9c1-a256c8c1fd50",
+        "urn:uuid:21b87a5a-ec15-4163-9736-6c8331622c00",
+        "urn:uuid:689fac10-89cd-458a-8e1f-2fa153512ff0",
+        "urn:uuid:5d38a90f-d78c-4443-9d38-cc3750c449a2",
+        "urn:uuid:c2cf9814-3df5-45d3-841e-374fc0247558",
+        "urn:uuid:cc84495f-704c-4d72-8426-c2a4cd6abfd1",
+        "urn:uuid:ab8bb23c-2869-4f97-98ad-044413a233af",
+        "urn:uuid:63c71ce2-771a-4514-9c96-ed104f37e00f",
+        "urn:uuid:bb56d8e9-bf39-401d-9853-0e9cff0ff95f",
+        "urn:uuid:f5d5e48b-ba2f-4b1b-af78-390ab3498d5c",
+        "urn:uuid:46183ba3-c74e-4745-a172-6e3a4bbcd41f",
+        "urn:uuid:ea52d020-7ad1-4138-819a-63776b3592f9",
+        "urn:uuid:1b4df9fb-64d3-4813-8da6-50146ff7def6",
+        "urn:uuid:65bbae17-01f5-4593-95ff-c3b9650d4405",
+        "urn:uuid:7369edf6-4dea-4b39-b586-452c873dd28f"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+name: crypto-queries
+version: 0.0.1
+dependencies:
+  codeql/java-all: ^0.8.0
