@@ -2,8 +2,8 @@
 
 This project benchmarks **three methods** of generating Cryptographic Bills of Materials (CBOMs) for the same codebase, comparing complexity, coverage, and CycloneDX 1.6 standard adherence.
 
-**Benchmark target:** Apache Kafka (commit f20f299). The `kafka-f20f299` directory should contain the Kafka source, or use any Java/Scala project path for Method 1.
-This commit was chosen along with CycloneDX 1.6 to compare also with the CBOMKit CBOM generated for Kafka.
+**Benchmark target:** Apache Kafka (commit f20f299). 
+Kafka project ant the fixed commit were chosen in addition with CycloneDX 1.6 version to compare with sonarqube generation and also with the CBOMKit CBOM generated for Kafka.
 
 
 ## Overview
@@ -197,7 +197,7 @@ cyclonedx validate --input-file generated-cboms/llm_cbom.json
 | **CodeQL** | Medium–High | 12–40 min | Dynamic algorithms, TLS, insecure random |
 | **Merge** | — | — | Maximum coverage |
 
-See [CBOM_COMPARISON_REPORT.md](CBOM_COMPARISON_REPORT.md) for full analysis.
+See [The CBOM Report](CBOM_COMPARISON_REPORT.md) and [Kimi Report](KIMI_ASSESSMENT.md) for full analysis.
 
 
 ## Lessons Learnt 
